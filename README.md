@@ -10,22 +10,25 @@ Dentro desse projeto eu utilizo algumas técnologias e sistemas que irei separar
 
 Front-end:
 
-Html
-Css
-JavaScript
+- Html
+- Css
+- JavaScript
+- 
 Backend:
 
-Flask
-Python
-Banco de dados relacional (sqlite3)
-Jinja2
+- Flask
+- Python
+- Banco de dados relacional (sqlite3)
+- Jinja2
+- 
 Funcionalidades:
 
-Cadastro de Usuarios
-Sistema de login e senha
-Upload de imagens unicas
-Mudança de senha do usuario via e-mail
-Cadastro de administradores
-Pagina se comporta diferente para quem é administrador ou usuario
-Mensagens Flash
+- Cadastro de Usuarios
+- Sistema de login e senha
+- Upload de imagens unicas
+- Mudança de senha do usuario via e-mail
+- Cadastro de administradores
+- Pagina se comporta diferente para quem é administrador ou usuario
+- Mensagens Flash
+
 Dentro do projeto possui mais funcionalidades, estou comentando aos poucos o que cada funcionalidade faz, na pagina principal (app.py).
