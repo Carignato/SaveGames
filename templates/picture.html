@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="static/css/profile.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://kit.fontawesome.com/8b0a50c0df.js" crossorigin="anonymous"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">      
+</head>
+<body>
+    <div class="container dotransparent">
+        <div class="row gutters mt15">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    {% if filename %}
+                                    <div>
+                                      <img  src="static/img_user/{{filename}}" width="500"> 
+                                    </div>  
+                                
+                                    {% else %}   
+                                
+                                    
+                                    <img src="static/img_user/default_profile_pic.png" width="200"> 
+                                
+                                 
+                                
+                                    {% endif %}         
+
+
+                                
+                                </div>
+                                <h5 class="user-name">{{ data.username }}</h5>
+                                <h6 class="user-email">{{ data.email }}</h6>
+                            </div>
+                            <div class="about">
+                                <a href="/profile"><button type="button" class="btn btn-block btn-primary btn-lg btn from-top"><small class="col-6"><i class="fa-solid fa-address-card"></i> Editar perfil</small></button></span></a><br>
+                                <a href="/picture"><button type="button" class="btn btn-block btn-primary btn-lg btn from-top mark-gray"><small class="col-6"><i class="fa-solid fa-images"></i> Alterar foto</small></button></span></a><br>
+                                <a href="/forgot_password"><button type="button" class="btn btn-block btn-primary btn-lg btn from-top"><small class="col-6"><i class="fa-solid fa-key"></i> Alterar senha</small></button></span></a><br>
+                                <a href="/main"><button type="button" class="btn btn-block btn-primary btn-lg btn from-top"><small class="col-6"><i class="fa-solid fa-arrow-left-long"></i> Voltar a pagina inicial</small></button></span></a><br>
+                                <p></p>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+
+                          
+                         
+
+
+                            <div class="align-center"> 
+
+                                {% if filename %}
+                            
+                                <img class="img-user" src="static/img_user/{{filename}}"> 
+                              
+                          
+                              {% else %}   
+                          
+                              
+                              <img src="static/img_user/default_profile_pic.png"> 
+                          
+                           
+                          
+                              {% endif %}         
+  
+  
+                              
+                              <form method=post enctype=multipart/form-data action="/upload_img">
+                                <input class ="teste" type=file name=file autocomplete="off" required class="align-center">
+                                <input  type=submit value=Enviar class="btn btn-primary align-center mt-15 ">
+                              </form>
+
+                            </div>  
+
+
+
+
+                         
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+  
+
+</body>
+</html>

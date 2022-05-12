@@ -1,0 +1,60 @@
+body{
+  background-image: url("https://webenezer.com.br/wp-content/uploads/2017/09/web-designer-pune-background-white-webenezer.jpg");
+  background-size: 100% 100%;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position : center center ;
+  background-attachment : fixed ;
+  background-size : cover ;
+  max-height: 720px;
+  
+}
+.search{
+    margin-top: 10%!important;
+    margin-left: 39%!important;
+    width: 20%;
+    border: solid #000;
+  
+  }
+  
+  .table{
+    width: 50%!important;
+    margin-top: 4%!important;
+    margin-left: 25%!important;
+    border: solid #000;
+  }
+  
+.menu_up{
+
+  background-color: rgba(125, 125, 125, 0.69);
+  border: solid #000;
+}
+
+.fa-solid{
+  margin-left:15%;
+  color: #000;
+  margin-top: 10%!important;
+}
+
+.game-name{
+
+  padding-top: 2%!important;
+} 
+
+.alert{
+
+  padding-top: 2%!important;
+  padding-left: 2%!important;
+ 
+}
+
+.lineone{
+  color: #000!important;
+  border: rgba(125, 125, 125, 0.69);
+  padding-top: 2%!important;
+} 
+  
+.img-windows{
+
+ margin-left:  5%!important;
+}

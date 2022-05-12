@@ -1,0 +1,41 @@
+body{
+background-image: url("https://images4.alphacoders.com/114/thumb-1920-1147876.png");   
+width: 100vw;
+background-repeat: no-repeat;
+background-position : center center ;
+background-attachment : fixed ;
+background-size : cover ;
+max-height: 720px;
+    
+}
+
+.title_line{
+    color: #FFF!important;
+}
+
+.border{
+
+    margin-top: 25%!important;
+}
+
+
+.btn-primary {
+    background: #000!important;
+    color: #fff!important;
+    border-radius: 50px;
+    width: 100% !important;
+    display: inline;
+    border-color: #000!important;
+   
+}
+
+.btn-primary:focus {
+    box-shadow: none;
+    border: none
+}
+
+
+.message_alert{
+
+    text-align: center!important;
+}
