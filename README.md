@@ -13,14 +13,14 @@ Front-end:
 - Html
 - Css
 - JavaScript
-- 
+
 Backend:
 
 - Flask
 - Python
 - Banco de dados relacional (sqlite3)
 - Jinja2
-- 
+
 Funcionalidades:
 
 - Cadastro de Usuarios
