@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="static/css/add_page.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://kit.fontawesome.com/8b0a50c0df.js" crossorigin="anonymous"></script>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">  
+      
+   <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    
+    <div class="container">
+  
+    <form action="/add_game" method="POST">
+        <div class='border border-dark p-4 rounded' id='basicInfo'>
+    
+                
+           
+                <div class='form-group action collapse' data-toggle='collapse'>
+                   
+                    <div class='form-group row'>
+                        <div class='col'>
+                            <label for='actionSource' class='title_line'>Source of Action</label>
+                            <select class='form-control' id='actionSource'>
+                                <option value=0>Choose One</option>
+                                <option value='Goals and Objectives'>Goals and Objectives</option>
+                                <option value='New Construction Program'>New Construction Program</option>
+                                <option value='Planning Yard'>Planning Yard</option>
+                                <option value='Other'>Other</option>
+                            </select>
+                            <div class='text-danger collapse' id='valSource'>Action Source is required.</div>
+                        </div>
+                    </div>
+                  
+                    <div class='form-group collapse' data-toggle='collapse' id='gandoDiv'>
+                        <label for='gando' class='title_line'>Command Objective</label>
+                        <select class='form-control' id='gando'>
+                            <option value=0>Choose an Objective</option>
+                        </select>
+                        <div class='text-danger collapse' id='valGando'>Objective is required.</div>
+                    </div>
+                  
+                    
+                    
+                </div>
+            
+                    <div class='form-group edit' data-toggle='collapse'>
+                        <label for='actionStatus' class='title_line'>Plataforma</label>
+                        <select class='form-control' id='actionStatus' name="plataforma">
+                            <option value='Open'>Windows</option>
+                        </select>
+                    </div>
+                
+                <div class='form-group'>
+                    <label for='actionTitle' class='title_line'>Nome do Jogo:</label>
+                    <input type='text' class='form-control' placeholder='Escreva o nome do jogo' id='actionTitle' name="nome">
+                    <div class='text-danger collapse' id='valTitle'>Action Title is required.</div>
+                </div>
+             
+                <div class='form-group edit' data-toggle='collapse'>
+                    <label for='actionStatus' class='title_line'>Status</label>
+                    <select class='form-control' id='actionStatus' name="status">
+                        <option value='Open' class="alert alert-success">Funcionando</option>
+                        <option value="Close" class="alert alert-danger">Não funcionando</option>
+                        
+                    </select>
+                </div>
+                <div class='form-group'>
+                    <label for='actionTitle' class='title_line'>Link para a tradução:</label>
+                    <input type='text' class='form-control' placeholder='Insira o link para a pasta da tradução' id='actionTitle' name="link">
+                    <div class='text-danger collapse' id='valTitle'>Action Title is required.</div>
+                </div>
+                {% with messages =  get_flashed_messages(category_filter=["error_game_name"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="message_alert">
+                        <div class="alert alert-danger show col "><br>
+                            <strong>{{ message }}!</strong><br>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% with messages =  get_flashed_messages(category_filter=["error_game_link"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="message_alert">
+                        <div class="alert alert-danger show col "><br>
+                            <strong>{{ message }}!</strong><br>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% with messages =  get_flashed_messages(category_filter=["broken_link_2"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="message_alert">
+                        <div class="alert alert-danger show col "><br>
+                            <strong>{{ message }}!</strong><br>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% with messages =  get_flashed_messages(category_filter=["error_registered_game"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="message_alert">
+                        <div class="alert alert-danger show col "><br>
+                            <strong>{{ message }}!</strong><br>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <span class="form-group mt-3"> <button type="submit" class="btn btn-block btn-primary btn-lg" ><small class="col-6"><i class="far fa-user pr-2"></i>Enviar</small></button> </span>
+    </form>        
+            </div>
+        </div>
+        
+    
+        <div class='form-group newAction'>
+            <div class='form-check form-check-inline' data-toggle='collapse'>
+                
+            </div>
+            
+            <div id='subActions' class='collapse form-group p-4' data-toggle='collapse'>
+                <label for='subActionDiv' class='title_line'>Sub Actions</label>
+                <div class='border-4 border-dark rounded' id='subActionDiv'>
+                    <div class='row d-flex justify-content-end m-2'>
+                        <button type='button' class='btn btn-primary btn-sm' id='addRow'>Add Row</button>
+                    </div>
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th scope='col'>Title</th>
+                                <th scope='col'>Description</th>
+                                <th scope='col'>Assigned To</th>
+                                <th scope='col'>Due Date</th>
+                                <th scope='col'>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody id='subTable'>
+                            <tr>
+                                <td><input type='text' class='form-control subTitle'></td>
+                                <td><textarea type='text' class='form-control subDesc'></textarea></td>
+                                <td><div class='subAssigned' id='row-1'></div></td>
+                                <td><input type='text' class='form-control subDue' id='dueDate'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/css/edit_game.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/8b0a50c0df.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">  
+</head>
+<body>
+   
+
+    {% block modal %}
+<div class="exampleModal">
+  
+    <form action="/send_edit_game" method="POST">
+        
+        <div class="note">
+            <p>Edite o jogo</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </div>
+
+        <div class="form-content">
+        
+                <div class='form-group edit' data-toggle='collapse'>
+                    <label for='actionStatus' class='title_line'>Plataforma</label>
+                    <select class='form-control' id='actionStatus' name="plataforma">
+                        <option value='Windows'>Windows</option>
+                    </select>
+                </div>
+             
+                <div class='form-group edit' data-toggle='collapse'>
+                    <label for='actionStatus' class='title_line'>Nome do jogo:</label>
+                    <select class='form-control' id='actionStatus' name="nome">
+                        <option value='{{data.nome}}'>{{data.nome}}</option>
+                    </select>
+                </div>
+            
+            <div class='form-group edit' data-toggle='collapse'>
+                <label for='actionStatus' class='title_line'>Status</label>
+                
+                <select class='form-control alert alert-danger' id='actionStatus' name="status">
+
+                    <option value='Funcionando' class="alert alert-success">Funcionando</option>
+                    <option value="Não Funcionado" class="alert alert-danger">Não funcionando</option>
+                    
+                </select>
+            </div>
+            <div class='form-group'>
+                <label for='actionTitle' class='title_line'>Edite o link para a tradução com  http ou https:</label>
+                <input type='text' class='form-control' placeholder='Insira o link para a pasta da tradução' id='actionTitle' name="link" value="{{data.link}}">
+                <div class='text-danger collapse' id='valTitle'>Action Title is required.</div>
+            </div>
+            <input type="hidden" name="game_id" value="{{data.game_id}}">
+              
+             </div>
+             
+             <div class="form-group mt-3"> <button type="submit" class=" btn-primary btn-lg" ><small class="col-6"><i class="fa-solid fa-pencil"></i> Alterar</small></button></div>   
+    </form>
+            
+             <a href="/edit_page"><div class="form-grou p mt-3"> <button type="submit" class=" btn-primary btn-lg" style="background-color: rgb(184, 50, 50)!important;" ><small class="col-6">  Cancelar</small></button></div></a>
+       
+            
+          
+</div>
+
+{% endblock %}  
+
+{% block script %}
+
+<script>
+
+$(document).ready(function(){
+  console.log('windows is loaded')
+    $("#exampleModal").modal("show")
+
+    })
+
+    </script>
+
+    {% endblock %}  
+
+        
+    </body>
+    </html>
