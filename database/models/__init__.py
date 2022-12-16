@@ -1,0 +1,1 @@
+from database.models.register_model import RegisterModel

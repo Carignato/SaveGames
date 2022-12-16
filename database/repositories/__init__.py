@@ -1,0 +1,1 @@
+from database.repositories.register_repository import RegisterRepositoryPostgresql
